@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 08, 2021 at 07:48 AM
+-- Generation Time: Dec 08, 2021 at 01:20 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.20
 
@@ -67,9 +67,17 @@ CREATE TABLE `tb_cart` (
 --
 
 INSERT INTO `tb_cart` (`id`, `id_user`, `id_product`, `total`, `status`) VALUES
-(13, 18, 8, 2, 'Selesai'),
-(14, 18, 7, 1, 'Pesanan Baru'),
-(15, 18, 9, 1, 'Diproses');
+(13, 18, 8, 1, 'Diproses'),
+(14, 18, 7, 2, 'Diproses'),
+(15, 18, 9, 1, 'Diproses'),
+(16, 18, 9, 1, 'Dikirim'),
+(17, 18, 8, 1, 'Pesanan Baru'),
+(18, 18, 7, 2, 'Pesanan Baru'),
+(19, 18, 9, 1, 'Pesanan Baru'),
+(20, 18, 9, 1, 'Pesanan Baru'),
+(22, 18, 9, 1, 'Pesanan Baru'),
+(23, 18, 9, 1, 'Pesanan Baru'),
+(24, 18, 8, 1, 'Pesanan Baru');
 
 -- --------------------------------------------------------
 
@@ -104,7 +112,7 @@ CREATE TABLE `tb_product` (
   `product_price` int(11) NOT NULL,
   `product_description` text NOT NULL,
   `product_image` varchar(100) NOT NULL,
-  `product_status` tinyint(1) NOT NULL
+  `product_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -113,7 +121,7 @@ CREATE TABLE `tb_product` (
 
 INSERT INTO `tb_product` (`product_id`, `category_id`, `product_name`, `product_price`, `product_description`, `product_image`, `product_status`) VALUES
 (7, 7, 'produk 1', 1, '1', '61b03dba9e39e.jpg', 1),
-(8, 8, 'Produk 2', 123, 'ewqd', '61b03dca59d0f.jpg', 1),
+(8, 8, 'Produk 2', 123, 'ewqd', '61b03dca59d0f.jpg', 0),
 (9, 7, 'Produk 3', 235, 'wdeq wq', '61b03de653a87.jpg', 1);
 
 --
@@ -159,7 +167,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT for table `tb_cart`
 --
 ALTER TABLE `tb_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `tb_kategori`
