@@ -178,6 +178,10 @@
 									<input name="deskripsi" type="text" class="form-control" required autofocus>
 								</div>
 								<div class="form-group">
+									<label>Stok</label>
+									<input name="stok" type="number" class="form-control" required autofocus>
+								</div>
+								<div class="form-group">
 									<label>Foto</label>
 									<input class="form-control" type="file" id="name" name="foto">
 								</div>
@@ -215,6 +219,7 @@ if(isset($_POST["tambah"])){
 	$kategori = htmlspecialchars($_POST["kategori"]);
 	$harga = htmlspecialchars($_POST["harga"]);
 	$deskripsi = htmlspecialchars($_POST["deskripsi"]);
+	$stok = $_POST['stok'];
 
 	//data foto
 	$ukuranFile = $_FILES["foto"]["size"];
@@ -267,7 +272,7 @@ if(isset($_POST["tambah"])){
 	$foto = uniqid().'.'.$ekstensiGambar;
 	move_uploaded_file($temp,'product/'.$foto);
 
-	mysqli_query($conn, "INSERT INTO tb_product VALUES('','$kategori','$nama','$harga','$deskripsi','$foto',1)");
+	mysqli_query($conn, "INSERT INTO tb_product VALUES('','$kategori','$nama','$harga','$deskripsi','$foto',$stok)");
 
 	if(mysqli_affected_rows($conn) > 0){
 		echo "<script>

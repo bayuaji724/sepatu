@@ -63,9 +63,9 @@ $cartDone = mysqli_query($conn, "SELECT * FROM tb_cart WHERE id_user = $idUser A
                   <li class="nav-item">
                     <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">Dikirim</a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a class="nav-link" id="custom-tabs-four-messages-tab" data-toggle="pill" href="#custom-tabs-four-messages" role="tab" aria-controls="custom-tabs-four-messages" aria-selected="false">Selesai</a>
-                  </li>
+                  </li> -->
                 </ul>
               </div>
               <div class="card-body">
@@ -131,8 +131,8 @@ $cartDone = mysqli_query($conn, "SELECT * FROM tb_cart WHERE id_user = $idUser A
                         <?php endforeach; ?>
                     </table>
                   </div>
-                  <div class="tab-pane fade" id="custom-tabs-four-messages" role="tabpanel" aria-labelledby="custom-tabs-four-messages-tab">
-                  <table class="table">
+                  <!-- <div class="tab-pane fade" id="custom-tabs-four-messages" role="tabpanel" aria-labelledby="custom-tabs-four-messages-tab">
+                    <table class="table">
                         <tr>
                             <th>No Order</th>
                             <th>Nama Barang</th>
@@ -157,7 +157,7 @@ $cartDone = mysqli_query($conn, "SELECT * FROM tb_cart WHERE id_user = $idUser A
                         </tr>
                         <?php endforeach; ?>
                     </table>
-                  </div>   
+                  </div>    -->
                 </div>
               </div>
               <!-- /.card -->
