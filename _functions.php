@@ -1,7 +1,5 @@
 <?php
 
-// FUNCTIONS
-
 function loginCheck() {
   if(isset($_SESSION["login-sepatu"])){
     echo "<script>
