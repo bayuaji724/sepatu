@@ -8,8 +8,8 @@
       <?php else : ?>
         <li><a href="produk.php">Produk</a></li>
         <li><a href="cart.php">Keranjang saya</a></li>
+        <li><a href="pesanan.php">Pesanan Anda</a></li>
       <?php endif ;?> |
-      <li><a href="logout.php">Login</a></li>
       <li><a href="logout.php">Keluar</a></li>
       
   </ul>
