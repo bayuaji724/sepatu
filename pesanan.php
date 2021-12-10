@@ -21,9 +21,33 @@
 <!-- Bootstrap 4 -->
 <script src="template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="template/dist/js/adminlte.min.js"></script>
+<scrilpt src="template/dist/js/adminlte.min.js"></scrilpt>
 <!-- AdminLTE for demo purposes -->
 <script src="template/dist/js/demo.js"></script>
+
+<?php
+
+session_start();
+
+require '_functions.php';
+require 'koneksi.php';
+
+loginUser();
+
+// take admin_id
+$username = $_SESSION['login-sepatu'];
+$user = mysqli_query($conn, "SELECT * FROM tb_admin WHERE username = '$username'");
+$user = mysqli_fetch_assoc($user);
+$idUser = $user['admin_id'];
+
+// take cart data
+$cartProcess = mysqli_query($conn, "SELECT * FROM tb_cart WHERE id_user = $idUser AND status = 'Diproses'");
+$cartSend = mysqli_query($conn, "SELECT * FROM tb_cart WHERE id_user = $idUser AND status = 'Dikirim'");
+$cartDone = mysqli_query($conn, "SELECT * FROM tb_cart WHERE id_user = $idUser AND status = 'Selesai'");
+
+?>
+
+
 </head>
 <body>
 <center><img src="icon/ds1.png" alt="dehanexs" width=80px;><br> <p>DEHANEX'S STORE</p></center>
@@ -50,46 +74,88 @@
                     <table class="table">
                         <tr>
                             <th>No Order</th>
+                            <th>Nama Barang</th>
+                            <th>Harga Barang</th>
+                            <th>Total Barang</th>
                             <th>Total Bayar</th>
                             <th>Status</th>
                         </tr>
+                        <?php foreach($cartProcess as $cart) : ?>
                         <tr>
-                            <td>1</td>
-                            <td>37000</td>
+                            <?php
+                              $idProduct = $cart['id_product'];
+                              $product = mysqli_query($conn, "SELECT * FROM tb_product WHERE product_id = $idProduct");
+                              $product = mysqli_fetch_assoc($product);
+                            ?>
+                            <td><?= $cart['id'] ?></td>
+                            <td><?= $product['product_name'] ?></td>
+                            <td><?= 'Rp. ' . number_format($product['product_price']) ?></td>
+                            <td><?= $cart['total'] ?></td>
+                            <td><?= 'Rp. ' . number_format($product['product_price'] * $cart['total']) ?></td>
                             <td><span class="badge badge-info">Processing</span></td>
                         </tr>
+                        <?php endforeach; ?>
                     </table>
                   </div>
                   <div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
                   <table class="table">
                         <tr>
                             <th>No Order</th>
+                            <th>Nama Barang</th>
+                            <th>Harga Barang</th>
+                            <th>Total Barang</th>
                             <th>Total Bayar</th>
                             <th>Status</th>
                             <th>Info Paket</th>
                         </tr>
+                        <?php foreach($cartProcess as $cart) : ?>
                         <tr>
-                            <td>1</td>
-                            <td>37000</td>
-                            <td><span class="badge badge-warning">Sedang dikirim</span></td>
-                            <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-info">
-                  Di terima
-                </button></td>
+                            <?php
+                              $idProduct = $cart['id_product'];
+                              $product = mysqli_query($conn, "SELECT * FROM tb_product WHERE product_id = $idProduct");
+                              $product = mysqli_fetch_assoc($product);
+                            ?>
+                            <td><?= $cart['id'] ?></td>
+                            <td><?= $product['product_name'] ?></td>
+                            <td><?= 'Rp. ' . number_format($product['product_price']) ?></td>
+                            <td><?= $cart['total'] ?></td>
+                            <td><?= 'Rp. ' . number_format($product['product_price'] * $cart['total']) ?></td>
+                            <td><span class="badge badge-info">Processing</span></td>
+                            <td>
+                              <a href="diterima.php?id=<?= $cart['id'] ?>" class="btn btn-info" onclick="return confirm('Apakah anda yakin?')">Diterima</a>
+                              <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-info">
+                                Di terima
+                              </button> -->
+                            </td>
                         </tr>
+                        <?php endforeach; ?>
                     </table>
                   </div>
                   <div class="tab-pane fade" id="custom-tabs-four-messages" role="tabpanel" aria-labelledby="custom-tabs-four-messages-tab">
                   <table class="table">
                         <tr>
                             <th>No Order</th>
+                            <th>Nama Barang</th>
+                            <th>Harga Barang</th>
+                            <th>Total Barang</th>
                             <th>Total Bayar</th>
                             <th>Status</th>
                         </tr>
+                        <?php foreach($cartDone as $cart) : ?>
                         <tr>
-                            <td>1</td>
-                            <td>37000</td>
-                            <td><span class="badge badge-success">Paket telah selesai</span></td>
+                            <?php
+                              $idProduct = $cart['id_product'];
+                              $product = mysqli_query($conn, "SELECT * FROM tb_product WHERE product_id = $idProduct");
+                              $product = mysqli_fetch_assoc($product);
+                            ?>
+                            <td><?= $cart['id'] ?></td>
+                            <td><?= $product['product_name'] ?></td>
+                            <td><?= 'Rp. ' . number_format($product['product_price']) ?></td>
+                            <td><?= $cart['total'] ?></td>
+                            <td><?= 'Rp. ' . number_format($product['product_price'] * $cart['total']) ?></td>
+                            <td><span class="badge badge-success">Paket telah Selesai</span></td>
                         </tr>
+                        <?php endforeach; ?>
                     </table>
                   </div>   
                 </div>
