@@ -90,7 +90,7 @@
 
 .main-content {
     width: 100%;
-    background: #F3F8FB;
+    background: #ebebeb;
 }
 
 .main-content-inner {
@@ -110,7 +110,7 @@
     height: 100vh;
     width: 280px;
     overflow: hidden;
-    background: #303641;
+    background: #fff;
     box-shadow: 2px 0 32px rgba(0, 0, 0, 0.05);
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -232,7 +232,7 @@
 /*-------------------- 2.1.1 Horizontal Menu -------------------*/
 
 .body-bg {
-    background: #F3F8FB;
+    background: #244a8f;
 }
 
 .horizontal-main-wrapper {
