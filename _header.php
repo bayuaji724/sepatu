@@ -10,7 +10,8 @@
         <li><a href="cart.php">Keranjang saya</a></li>
         <li><a href="pesanan.php">Pesanan Anda</a></li>
       <?php endif ;?> |
-      <li><a href="logout.php">Keluar</a></li>
+      <li><a href="logout.php">Login</a></li>
+      <li><a href="logout.php"  onclick="return confirm('Apakah anda yakin ingin keluar ?')">Keluar</a></li> 
       
   </ul>
   </div>
