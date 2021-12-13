@@ -11,7 +11,7 @@ function loginCheck() {
   }
 }
 
-function notLoginCheck() {
+function isLogin() {
   if(!isset($_SESSION["login-sepatu"])){
     echo "<script>
             alert('Anda belum login!')
