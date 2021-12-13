@@ -122,7 +122,11 @@ $cartDone = mysqli_query($conn, "SELECT * FROM tb_cart WHERE id_user = $idUser A
                             <td><?= 'Rp. ' . number_format($product['product_price'] * $cart['total']) ?></td>
                             <td><span class="badge badge-info">Processing</span></td>
                             <td>
+<<<<<<< HEAD
                               <a href="diterima.php?id=<?= $cart['id'] ?>" class="btn btn-info" onclick="return confirm('Apakah paket anda sudah di terima...?')">Diterima</a>
+=======
+                              <a href="diterima.php?id=<?= $cart['id'] ?>" class="btn btn-info" onclick="return confirm('Apakah anda yakin?')">Diterima</a>
+>>>>>>> 614333bd81d39045b8a79afe6fe790042d4ed1c4
                               <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-info">
                                 Di terima
                               </button> -->

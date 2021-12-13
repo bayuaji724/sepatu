@@ -36,7 +36,7 @@
                                 <div class="product-info">
                                     <h3 class="product-name"><?= mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM tb_product WHERE product_id = " . $p['id_product']))['product_name'] ?></h3>
                                     <h4 class="product-price">Rp. <?= number_format(mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM tb_product WHERE product_id = " . $p['id_product']))['product_price']) ?></h4>
-                                    <p class="product-quantity">Jumlah: <a href="kurangBarang.php?id=<?= $p['id'] ?>"><butto style="margin: 10px;">-</butto></a> <?= $p['total'] ?> <a href="tambahBarang.php?id=<?= $p['id'] ?>"><butto style="margin: 10px;">+</butto></a>
+                                    <p class="product-quantity">Jumlah: <a href="kurangBarang.php?id=<?= $p['id'] ?>"><butto style="margin: 10px;">-</butto></a> <?= $p['total'] ?><a href="tambahBarang.php?id=<?= $p['id'] ?>"><butto style="margin: 10px;">+</butto></a>
                                     <a href="hapusBarang.php?id=<?= $p['id'] ?>" class="product-remove"><span class="remove">Remove</span></a>
                                 </div>
                             </div>

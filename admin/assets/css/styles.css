@@ -90,7 +90,11 @@
 
 .main-content {
     width: 100%;
+<<<<<<< HEAD
     background: #ebebeb;
+=======
+    background: #F3F8FB;
+>>>>>>> 614333bd81d39045b8a79afe6fe790042d4ed1c4
 }
 
 .main-content-inner {
@@ -110,7 +114,11 @@
     height: 100vh;
     width: 280px;
     overflow: hidden;
+<<<<<<< HEAD
     background: #fff;
+=======
+    background: #303641;
+>>>>>>> 614333bd81d39045b8a79afe6fe790042d4ed1c4
     box-shadow: 2px 0 32px rgba(0, 0, 0, 0.05);
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -232,7 +240,11 @@
 /*-------------------- 2.1.1 Horizontal Menu -------------------*/
 
 .body-bg {
+<<<<<<< HEAD
     background: #244a8f;
+=======
+    background: #F3F8FB;
+>>>>>>> 614333bd81d39045b8a79afe6fe790042d4ed1c4
 }
 
 .horizontal-main-wrapper {

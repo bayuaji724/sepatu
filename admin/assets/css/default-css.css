@@ -30,7 +30,11 @@ html {
 }
 
 body {
+<<<<<<< HEAD
     background: #FEFBF3;
+=======
+    background: #fff;
+>>>>>>> 614333bd81d39045b8a79afe6fe790042d4ed1c4
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
     /* Fix for webkit rendering */
