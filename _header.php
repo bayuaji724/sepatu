@@ -4,7 +4,7 @@
   <ul>
       <li><a href="index.php">Home</a></li>
       <?php if($_SESSION["login-sepatu"] == "admin") : ?>
-        <li><a href="admin">Dashboard Admin</a></li>
+        <li><a href="admin">Dashboard</a></li>
       <?php else : ?>
         <li><a href="produk.php">Produk</a></li>
         <li><a href="cart.php">Keranjang saya</a></li>
