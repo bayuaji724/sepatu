@@ -23,8 +23,6 @@ if($product['product_status'] < $totalSekarang){
         </script>";
 }
 
-die;
-
 mysqli_query($conn, "UPDATE tb_cart SET total = $totalSekarang WHERE id = $id");
 
 if(mysqli_affected_rows($conn) > 0){
