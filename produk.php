@@ -151,7 +151,7 @@ if(isset($_POST["addToCart"])){
             <option value="<?= $c['category_id'] ?>"><?= $c['category_name'] ?></option>
           <?php endforeach; ?>
         </select>
-        <button type="submit" class="buy-1">Pilih</button>
+        <button class="btn btn-warning " type="submit">Pilih</button>
       </form>
     </div>
   </div>

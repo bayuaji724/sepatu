@@ -139,7 +139,7 @@ if(isset($_POST["editProduct"])){
                     <img src="product/<?= $produk['product_image'] ?>" width="150px" alt="">
                     <div class="form-group">
                       <label>Nama Produk</label>
-                      <input name="nama" type="text" class="form-control" value="<?= $produk['product_name'] ?>" required>
+                      <input name="nama" type="text" class="form-control" value="<?= $produk['product_name'] ?>" required autofocus>
                     </div>
                     <div class="form-group">
                       <label>Kategori</label>

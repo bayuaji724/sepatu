@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/footer.css">
     <?php
     require '_headtags.php';
-    notLoginCheck();
+    isLogin();
     ?>
 </style>
     
